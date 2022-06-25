@@ -24,6 +24,11 @@ listaTeclas.forEach(tecla => {
 
 
 function tocaAudio(tecla){
-    const audio = document.querySelector(`#som_${tecla}`);
-    audio.play();
+    elemento = document.querySelector(`#som_${tecla}`);
+    if(elemento && elemento.localName === "audio"){
+        elemento.play();
+    }
+    else{
+        console.log('Elemento não encontrado ou inválido!')
+    }
 }
